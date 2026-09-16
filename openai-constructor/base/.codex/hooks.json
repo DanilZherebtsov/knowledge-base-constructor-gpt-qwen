@@ -1,0 +1,27 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 .codex/hooks/freshness_check.py",
+            "statusMessage": "проверяю состояние проекта",
+            "timeout": 20
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 .codex/hooks/consent_nudge.py",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}

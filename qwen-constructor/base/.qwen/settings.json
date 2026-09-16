@@ -1,0 +1,28 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "name": "freshness-check",
+            "command": "python3 .qwen/hooks/freshness_check.py",
+            "timeout": 20
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "name": "consent-nudge",
+            "command": "python3 .qwen/hooks/consent_nudge.py",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}
